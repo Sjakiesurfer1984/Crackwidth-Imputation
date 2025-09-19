@@ -24,7 +24,7 @@ class DatabaseHandler:
         if parent and not os.path.isdir(parent):
             os.makedirs(parent, exist_ok=True)
         conn = apsw.Connection(self.db_path)
-        logger.info(f"🗄 Connected to APSW database at {self.db_path}")
+        logger.info(f"Connected to APSW database at {self.db_path}")
         return conn
 
     def _table_exists(self, conn: apsw.Connection) -> bool:
